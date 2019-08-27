@@ -6,7 +6,7 @@ node_js:
   - '9'
 git: 
   depth: 3
-scripts:
+script:
   - yarn build
   - echo 'url-personalizada.com' > public/CNAME
 deploy:
@@ -14,7 +14,7 @@ deploy:
   - skip-cleanup: true
   - keep-history: true
   - github-token: $github_token
-  - local-dir: /dist
+  - local-dir: dist/
   - target-branch: master
   - commit_message: "Deploy release ${TRAVIS_TAG}"
   on:
